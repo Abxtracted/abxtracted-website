@@ -220,4 +220,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# NodeJs
+node_modules/
+
+# Dist files
+dist/
+
 # End of https://www.gitignore.io/api/git,macos,linux,windows,eclipse,intellij,sublimetext
