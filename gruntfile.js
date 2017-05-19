@@ -121,8 +121,8 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           flatten: true,
-          src: project.index.dist.file,
-          dest: project.index.dist.root
+          src: project.templates.dist.files,
+          dest: project.templates.dist.root
         }]
       }
     },
