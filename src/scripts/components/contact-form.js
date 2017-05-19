@@ -1,14 +1,15 @@
 define('components/contactForm', [
     'jquery',
-    'services/contactService'
-  ], function($, contactService){
+    'services/contactService',
+    'services/dateService'
+  ], function($, contactService, dateService){
 
     var CONTACT_FORM_SENDING_CSS_CLASS = 'form-sending';
     var CONTACT_FORM_SUCCESS_MESSAGE = 'Success! You\'ll get a reply soon.';
     var CONTACT_FORM_ERROR_MESSAGE = 'Ops! We got some error. Please, try again.';
 
     var _public = {};
-    var contactFormAlertElement, contactFormElement;
+    var contactFormAlertElement, contactFormElement, requesting;
 
     _public.init = function(){
       bindElements();
@@ -23,13 +24,21 @@ define('components/contactForm', [
 
     function onContactFormSubmit(evt){
       evt.preventDefault();
-      clearAlert();
-      contactFormElement.addClass(CONTACT_FORM_SENDING_CSS_CLASS);
 
+      if(!requesting){
+        requesting = true;
+        contactFormElement.addClass(CONTACT_FORM_SENDING_CSS_CLASS);
+        clearAlert();
+        sendFormData();
+      }
+    }
+
+    function sendFormData(){
       contactService.send({
-        name: getContactData('name'),
-        email: getContactData('email'),
-        message: getContactData('message')
+        Name: getContactData('name'),
+        Email: getContactData('email'),
+        Message: getContactData('message'),
+        Sent_At: dateService.getFormattedDateAndTime(new Date())
       }).then(onSendSuccess ,onSendError);
     }
 
@@ -59,6 +68,7 @@ define('components/contactForm', [
     }
 
     function onSendComplete(){
+      requesting = false;
       contactFormElement.removeClass(CONTACT_FORM_SENDING_CSS_CLASS);
     }
 
