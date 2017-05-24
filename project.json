@@ -62,6 +62,7 @@
       ]
     },
     "dist": {
+      "root": "dist/styles/",
       "bundle": "dist/styles/bundle.min.css",
       "vendor": {
         "bundle": "dist/vendor/styles/vendor.min.css"

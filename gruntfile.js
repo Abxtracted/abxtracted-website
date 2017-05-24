@@ -123,6 +123,11 @@ module.exports = function(grunt) {
           flatten: true,
           src: project.templates.dist.files,
           dest: project.templates.dist.root
+        }, {
+          expand: true,
+          flatten: true,
+          src: project.styles.dist.bundle,
+          dest: project.styles.dist.root
         }]
       }
     },
