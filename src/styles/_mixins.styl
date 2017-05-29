@@ -1,7 +1,7 @@
 @import '_variables'
 
 background-image($filename)
-  background-image url($path-images + $filename + '?@@timestamp')
+  background-image url($path-images + $filename + '?@@fingerprint')
 
 bg-gradient-vertical($top-color, $bottom-color)
   background $top-color /* Old browsers */

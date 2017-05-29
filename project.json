@@ -38,7 +38,8 @@
     "vendor": {
       "requirejs": "node_modules/requirejs/require.js",
       "jquery": "node_modules/jquery/dist/jquery.min.js",
-      "highlightjs": "node_modules/highlightjs/highlight.pack.min.js"
+      "highlightjs": "node_modules/highlightjs/highlight.pack.min.js",
+      "abxtracted": "node_modules/abxtracted/dist/abxtracted.min.js"
     },
     "dist": {
       "bundle": "dist/scripts/bundle.min.js",
@@ -46,7 +47,8 @@
         "root": "dist/vendor/scripts/",
         "requirejs": "dist/vendor/scripts/require.min.js",
         "jquery": "dist/vendor/scripts/jquery.min.js",
-        "highlightjs": "dist/vendor/scripts/highlightjs.min.js"
+        "highlightjs": "dist/vendor/scripts/highlightjs.min.js",
+        "abxtracted": "dist/vendor/scripts/abxtracted.min.js"
       }
     }
   },
@@ -62,6 +64,7 @@
       ]
     },
     "dist": {
+      "root": "dist/styles/",
       "bundle": "dist/styles/bundle.min.css",
       "vendor": {
         "bundle": "dist/vendor/styles/vendor.min.css"

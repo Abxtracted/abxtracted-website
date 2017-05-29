@@ -34,6 +34,7 @@
     "phantomjs": "^1.9.17"
   },
   "dependencies": {
+    "abxtracted": "^0.1.0",
     "ggrid": "^1.0.0",
     "highlightjs": "^9.10.0",
     "jquery": "^3.1.1",

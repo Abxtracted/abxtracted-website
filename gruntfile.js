@@ -17,7 +17,8 @@ module.exports = function(grunt) {
         files: {
           [project.scripts.dist.vendor.requirejs]: project.scripts.vendor.requirejs,
           [project.scripts.dist.vendor.jquery]: project.scripts.vendor.jquery,
-          [project.scripts.dist.vendor.highlightjs]: project.scripts.vendor.highlightjs
+          [project.scripts.dist.vendor.highlightjs]: project.scripts.vendor.highlightjs,
+          [project.scripts.dist.vendor.abxtracted]: project.scripts.vendor.abxtracted
         }
       },
       environment: {
@@ -123,6 +124,11 @@ module.exports = function(grunt) {
           flatten: true,
           src: project.templates.dist.files,
           dest: project.templates.dist.root
+        }, {
+          expand: true,
+          flatten: true,
+          src: project.styles.dist.bundle,
+          dest: project.styles.dist.root
         }]
       }
     },

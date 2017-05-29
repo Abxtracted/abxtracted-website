@@ -20,29 +20,55 @@ mixin usage-code-panels
           +code('javascript').
             /*
             ** Abx.Experiment(projectId, experimentKey)
+            **
             ** @projectId: String
             ** @experimentKey: String
             */
             var experiment = new Abx.Experiment('project-id', 'experiment_key');
 
             /*
-            ** experiment.getScenario(userIdentity, successCallback)
-            ** @userIdentity: String
-            ** @successCallback: Function
+            ** experiment.getScenario(params)
+            **
+            ** @params: Object
+            ** @params.customerId: String [optional]
+            ** @params.success: Function [required]
+            ** @params.error: Function [required]
             */
-            experiment.getScenario('user-identity', function(response){
-              var scenario = response.scenario;
-              // The scenario will be 'control' or 'variation'
+            experiment.getScenario({
+              success: function(response){
+                var scenario = response.scenario;
+                // The scenario will be 'control' or 'variation'.
+              },
+              error: function(err){
+                // In case some error occur, you should arbitrarily present either
+                // 'control' or 'variation' for the customer.
+                // In this case, customer will not count in the statistics.
+              }
             });
           p
-            != '<strong>Note:</strong> The user identity may be an e-mail, an unique id or any unique information that identifies the user in your application.'
+            != '<strong>Note:</strong> If you opt to inform customer id, it must be any unique information that identifies the customer in your application.'
           p 2. Inform when the user completes the experiment:
           +code('javascript').
             /*
-            ** experiment.complete(userIdentity)
-            ** @userIdentity: String
+            ** experiment.complete(params)
+            **
+            ** @params.customerId: String [optional/required]
+            ** @params.success: Function [optional]
+            ** @params.error: Function [optional]
             */
-            experiment.complete('user-identity');
+            experiment.complete({
+              customerId: 'some-unique-string', // See IMPORTANT note below.
+              success: function(response){
+                // Something to be done after customer complete
+                // the experiment successfully.
+              },
+              error: function(err){
+                // Something to be done if customer could not
+                // complete the experiment successfully.
+              }
+            });
+          p
+            != '<strong>IMPORTANT:</strong> CustomerId is required if you have identified the customer by yourself on getting scenario.'
           p 3. That's all.
       +code-panel('curl')
         +code-panel-section('Usage')
