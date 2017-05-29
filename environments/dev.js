@@ -7,7 +7,8 @@
       key: 'mfNDqbyXCmqc1zANtrWX',
       secret: 'zVh3i4YghzEuP9CeDSk66BX1pqZiakbAyhHip2Bc'
     },
-    googleAnalyticsId: 'UA-99548032-2'
-  }
+    googleAnalyticsId: 'UA-99548032-2',
+    abxtractedProjectId: '1651e269-cd0e-4a9f-adef-e7930f23ed41'
+  };
 
 }());
