@@ -1,3 +1,3 @@
 define('constants/configConstants', {
-  abTestServiceEnabled: true
+  abTestServiceEnabled: false
 });
