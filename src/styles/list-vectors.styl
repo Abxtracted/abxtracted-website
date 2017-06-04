@@ -1,5 +1,7 @@
 @require '_mixins'
 
+$list-vector-graph-height = 210px
+
 .list-vectors
   display block
   li
@@ -12,18 +14,17 @@
         float right
 
 .list-vectors-graph-container,
-.list-vectors-text
+.list-vectors-text-container
   float left
   width 50%
   min-height 1px
+  height $list-vector-graph-height
   box-sizing(border-box)
 
 .list-vectors-graph
-  padding-right 25px
   background-position center center
+  height $list-vector-graph-height
   background-repeat no-repeat
-  background-size 80% auto
-  height 220px
   &.list-vectors-graph-machine
     background-image('vector-machine.svg')
   &.list-vectors-graph-experiments
@@ -32,18 +33,14 @@
     background-image('vector-gift.svg')
 
 .list-vectors-text
-  padding-left 25px
-  padding-top 35px
+  position relative
+  top 50%
+  transform('translate(0,-50%)')
 
 +breakpoint('xs')
   .list-vectors-graph-container,
-  .list-vectors-text
+  .list-vectors-text-container
     width 100%
   .list-vectors
     li
-      &:nth-child(even)
-        .list-vectors-text
-          padding-left 25px
-  .list-vectors-text
-    padding-right 25px
-    padding-top 35px
+      margin-top 25px

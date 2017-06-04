@@ -32,11 +32,11 @@ clearfix()
     clear both
 
 transform($property)
-  -webkit-transform $property
-  -moz-transform    $property
-  -ms-transform     $property
-  -o-transform      $property
-  transform         $property
+  -webkit-transform unquote($property)
+  -moz-transform unquote($property)
+  -ms-transform unquote($property)
+  -o-transform unquote($property)
+  transform unquote($property)
 
 transform-origin($x, $y)
   -webkit-transform-origin $x $y
@@ -48,20 +48,6 @@ transition($property, $time)
   -moz-transition     $property $time $animation-ease-default
   -o-transition       $property $time $animation-ease-default
   transition          $property $time $animation-ease-default
-
-translate-2d($x, $y)
-  -webkit-transform  translate($x, $y)
-  -moz-transform     translate($x, $y)
-  -ms-transform      translate($x, $y)
-  -o-transform       translate($x, $y)
-  transform          translate($x, $y)
-
-translate-3d($properties)
-  -webkit-transform translate3d(unquote($properties))
-  -moz-transform    translate3d(unquote($properties))
-  -ms-transform     translate3d(unquote($properties))
-  -o-transform      translate3d(unquote($properties))
-  transform         translate3d(unquote($properties))
 
 unselectable()
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);

@@ -19,6 +19,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-http-server": "^1.2.0",
     "grunt-karma": "^0.11.0",
+    "grunt-minify-html": "^3.0.0",
     "grunt-newer": "^1.2.0",
     "grunt-replace": "^1.0.1",
     "jasmine-core": "~2.3.0",

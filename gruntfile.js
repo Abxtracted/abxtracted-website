@@ -25,6 +25,11 @@ module.exports = function(grunt) {
         files: {
           [project.environments.dist.file]: `${project.environments.source.root}/${env}.js`
         }
+      },
+      source: {
+        files: {
+          [project.scripts.dist.bundle]: project.scripts.dist.bundle
+        }
       }
     },
 
@@ -74,6 +79,17 @@ module.exports = function(grunt) {
           src: [project.templates.source.files],
           dest: project.templates.dist.root,
           ext: '.html'
+        }]
+      }
+    },
+
+    'minifyHtml': {
+      dist: {
+        files: [{
+          expand: true,
+          flatten: true,
+          src: project.templates.dist.files,
+          dest: project.templates.dist.root
         }]
       }
     },
@@ -148,11 +164,12 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', [
-    'uglify',
     'concat',
+    'uglify',
     'stylus',
     'imagemin',
-    'pug'
+    'pug',
+    'minifyHtml'
   ]);
 
   grunt.registerTask('start', [
