@@ -74,10 +74,10 @@ mixin usage-code-panels
         +code-panel-section('Usage')
         p 1. Obtain the user scenario:
         +code('bash').
-          curl -XGET 'http://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}'
+          curl -XGET 'https://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}'
         p 2. Inform when the user completes the experiment:
         +code('bash').
-          curl -XGET 'http://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}/check/complete'
+          curl -XGET 'https://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}/check/complete'
         p 3. That's all.
         p
           != '<strong>Note:</strong> The customerId may be an e-mail, an unique id or any unique information that identifies the user in your application.'
