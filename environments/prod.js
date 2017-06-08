@@ -1,7 +1,7 @@
 (function(){
 
   window.environment = {
-    appBaseUrl: 'http://app.abxtracted.com',
+    appBaseUrl: 'https://app.abxtracted.com',
     sheetsu: {
       url: 'https://sheetsu.com/apis/v1.0/f343f211c06b',
       key: 'mfNDqbyXCmqc1zANtrWX',
