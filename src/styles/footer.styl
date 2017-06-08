@@ -1,4 +1,29 @@
+@require '_variables'
+@require '_mixins'
+
 footer
   padding 25px 0
-  .logo
-    margin 0 auto
+  color $color-white
+  opacity 0.5
+  p
+    float left
+    margin 0
+    width 50%
+    &:not(:first-child)
+      text-align right
+    a
+      color $color-white
+      text-decoration none
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited
+        color $color-white
+
++breakpoint('xs')
+  footer
+    p
+      width 100%
+      text-align center
+      &:not(:first-child)
+        margin-top 10px

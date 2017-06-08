@@ -1,5 +1,12 @@
 include buttons.pug
 
+mixin page-header-minimal(title, cssClass)
+  section.page-header(class=cssClass)
+    h1= title
+    
+mixin page-header-minimal-small(title)
+  +page-header-minimal(title, 'page-header-small')
+
 mixin page-header(title, secondaryButtonText, primaryButtonText, cssClass)
   section.page-header(data-js="page-header" class=cssClass)
     h1= title
