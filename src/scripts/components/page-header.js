@@ -50,7 +50,7 @@ define('components/pageHeader', [
 
     function onGetExperimentScenarioSuccess(response){
       if(response.scenario == 'variation')
-        pageHeaderPrimaryBtnElement.text('Signup for free');
+        pageHeaderPrimaryBtnElement.text('Sign up for free');
       onGetExperimentScenarioComplete();
     }
 
