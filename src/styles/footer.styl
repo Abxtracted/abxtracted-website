@@ -4,21 +4,14 @@
 footer
   padding 25px 0
   color $color-white
-  opacity 0.5
   p
     float left
     margin 0
     width 50%
+    &:first-child
+      opacity 0.5
     &:not(:first-child)
       text-align right
-    a
-      color $color-white
-      text-decoration none
-      &:hover,
-      &:active,
-      &:focus,
-      &:visited
-        color $color-white
 
 +breakpoint('xs')
   footer

@@ -1,9 +1,11 @@
 @require '_variables'
 @require '_mixins'
 
+$menu-primary-item-color = $color-white
+
 .menu-primary-item
   float left
-  color $color-white
+  color $menu-primary-item-color
   text-transform uppercase
   text-decoration none
   &:not(:first-child)
@@ -18,6 +20,11 @@
   clearfix()
   a
     @extend .menu-primary-item
+    &:hover,
+    &:focus,
+    &:active
+      color $menu-primary-item-color
+
 
 +breakpoint('xs')
   .menu-primary-item

@@ -1,6 +1,16 @@
 @require '_variables'
 @require '_mixins'
 
+.section-home-why
+  text-align center
+
 .section-home-benefits
   .list-vectors
     margin-top 90px
+
++breakpoint('xs')
+  .section-home-why
+    text-align left
+  .section-home-benefits
+    .list-vectors
+      margin-top 50px

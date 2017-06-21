@@ -26,10 +26,17 @@ h6
   font-size $font-size-xxs
 
 p
-  line-height 1.2
+  line-height 1.35
 
 a
+  color $color-blue
+  text-decoration none
   cursor pointer
+  &:hover,
+  &:focus
+  &:active
+    color $color-blue-semi-light
+    outline 0
 
 input,
 textarea
@@ -47,3 +54,7 @@ ul
   margin 0
   padding 0
   list-style-type none
+
++breakpoint('xs')
+  h1
+    font-size 32px

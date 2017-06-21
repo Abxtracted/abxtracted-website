@@ -9,10 +9,10 @@ mixin usage-code-panels
     +code-panels(panels)
       +code-panel('javascript')
         +code-panel-section('Installation')
-          p 1. Install abxtracted via NPM
+          p 1. Install abxtracted via npm:
           +code('bash')
             != '$ npm install abxtracted --save'
-          p 2. Insert the abxtracted dist file in your index
+          p 2. Insert the abxtracted dist file in your index:
           +code('xml')
             != '&ltscript src="/node_modules/abxtracted/dist/abxtracted.min.js"&gt&lt/script&gt'
         +code-panel-section('Usage')
