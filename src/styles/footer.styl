@@ -4,20 +4,34 @@
 footer
   padding 25px 0
   color $color-white
+  clearfix()
   p
     float left
     margin 0
     width 50%
-    &:first-child
-      opacity 0.5
-    &:not(:first-child)
-      text-align right
+    opacity 0.5
+  ul
+    float right
+    width 50%
+    li
+      float right
+      &:not(:first-child)
+        margin-right 30px
 
 +breakpoint('xs')
   footer
     p
       width 100%
       text-align center
-      &:not(:first-child)
-        margin-top 10px
-        text-align center
+    ul
+      float none
+      margin 0 auto
+      padding-top 30px
+      width 75%
+      clearfix()
+      li
+        float none
+        display inline-block
+        &:not(:first-child)
+          margin-right 0
+          margin-left 30px

@@ -1,9 +1,14 @@
 mixin footer
-  footer
+  footer(data-js="footer")
     .gg-box
       .gg-row
         .gg-col-12
           p.
             ©2017 Abxtracted. All rights reserved.
-          p
-            != '<a href="/privacy">Privacy Policy</a> ・ <a href="https://medium.com/abxtracted" target="_blank">Blog</a>  ・ <a href="https://twitter.com/abxtracted" target="_blank">Twitter</a>'
+          ul
+            li
+              a(href="javascript:void(0)" data-footer-link="twitter" data-url="https://twitter.com/abxtracted") Twitter
+            li
+              a(href="javascript:void(0)" data-footer-link="blog" data-url="https://medium.com/abxtracted") Blog
+            li
+              a(href="javascript:void(0)" data-footer-link="privacy" data-url="privacy") Privacy Policy

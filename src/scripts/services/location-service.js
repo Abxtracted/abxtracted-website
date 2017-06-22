@@ -4,8 +4,10 @@ define('services/locationService', [
 
     var _public = {};
 
-    _public.url = function(url){
-      if(url)
+    _public.url = function(url, options){
+      if(url && options && options.openInNewTab)
+        providers.$window.open(url);
+      else if (url)
         providers.$location.href = url;
       else
         return providers.$location.href;

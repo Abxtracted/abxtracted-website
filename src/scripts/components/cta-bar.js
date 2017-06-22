@@ -1,7 +1,9 @@
 define('components/ctaBar', [
     'jquery',
+    'constants/trackConstants',
+    'services/trackService',
     'services/locationService'
-  ], function($, locationService){
+  ], function($, trackConstants, trackService, locationService){
 
     var _public = {};
 
@@ -14,7 +16,12 @@ define('components/ctaBar', [
     }
 
     function onCtaBarButtonClick(){
+      trackCtaBarPrimaryBtnClicked();
       locationService.goToApp();
+    }
+
+    function trackCtaBarPrimaryBtnClicked(){
+      trackService.track(trackConstants.ctaBar.clickedPrimaryBtn);
     }
 
     return _public;

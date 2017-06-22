@@ -1,10 +1,12 @@
 define('components/pageHeader', [
     'jquery',
-    'components/topbar',
-    'services/locationService',
+    'constants/trackConstants',
+    'constants/abTestConstants',
+    'services/trackService',
     'services/abTestService',
-    'constants/abTestConstants'
-  ], function($, topbar, locationService, abTestService, abTestConstants){
+    'services/locationService',
+    'components/topbar',
+  ], function($, trackConstants, abTestConstants, trackService, abTestService, locationService, topbar){
 
     var PAGE_HEADER_SELECTOR = '[data-js=page-header]';
     var PAGE_HEADER_SIBLING_SECTION_SELECTOR = [PAGE_HEADER_SELECTOR,'section'].join('+');
@@ -30,15 +32,29 @@ define('components/pageHeader', [
       pageHeaderSecondaryBtnElement = $(PAGE_HEADER_SECONDARY_BUTTON_SELECTOR);
 
       pageHeaderPrimaryBtnElement.on('click', onPageHeaderPrimaryButtonClick)
-      pageHeaderSecondaryBtnElement.on('click', goToSiblingSection)
+      pageHeaderSecondaryBtnElement.on('click', onPageHeaderSecondaryButtonClick)
     }
 
     function onPageHeaderPrimaryButtonClick(){
+      trackPageHeaderBtnClicked('clickedPrimaryBtn');
+      completeABTestExperiment();
+    }
+
+    function trackPageHeaderBtnClicked(clickedBtn){
+      trackService.track(trackConstants.pageHeader[clickedBtn]);
+    }
+
+    function completeABTestExperiment(){
       abTestService.completeExperiment({
         experimentKey: abTestConstants.experiments.pageHeaderPrimaryBtnKey,
         success: onCompleteExperiment,
         error: onCompleteExperiment
       });
+    }
+
+    function onPageHeaderSecondaryButtonClick(){
+      trackPageHeaderBtnClicked('clickedSecondaryBtn');
+      goToSiblingSection()
     }
 
     function goToSiblingSection(){

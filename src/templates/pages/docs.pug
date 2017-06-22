@@ -1,6 +1,7 @@
 extends ../layouts/standard.pug
 include ../components/page-header.pug
 include ../components/usage-code-panels.pug
+include ../components/working-examples-list.pug
 include ../components/cta-bar.pug
 
 block config
@@ -29,11 +30,7 @@ block content
           p.
             If you are considering to start using Abxtracted, we have some 
             great working examples besides our documentation page:
-          ul
-            li
-              != '<a href="https://jsfiddle.net/rcamargo/dveasaxj/" target="_blank">A/B Test with Abxtracted + Vanilla Javascript</a>'
-            li
-              != '<a href="https://jsfiddle.net/rcamargo/b5rubwcs/" target="_blank">A/B Test with Abxtracted + jQuery</a>'
+          +working-examples-list()
           p
             != 'If you have never heard about Abxtracted, read why we have decided to build a <a href="https://medium.com/abxtracted/introducing-abxtracted-6d060c276380" target="_blank">simpler and painless way to make trustable A/B tests</a>.'
           p

@@ -3,8 +3,9 @@ define('routes', [
     'views/home',
     'views/pricing',
     'views/docs',
-    'views/contact'
-  ], function(locationService, home, pricing, docs, contact){
+    'views/contact',
+    'views/privacy'
+  ], function(locationService, home, pricing, docs, contact, privacy){
 
     var _public = {};
 
@@ -20,6 +21,9 @@ define('routes', [
       },
       '/contact': {
         viewModule: contact
+      },
+      '/privacy': {
+        viewModule: privacy
       }
     };
 
