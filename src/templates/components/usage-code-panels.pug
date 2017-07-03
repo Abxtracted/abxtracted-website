@@ -4,7 +4,7 @@ include code-panel-section.pug
 include code-panels.pug
 
 mixin usage-code-panels
-  - var panels = [{selector: 'javascript', text: 'Javascript'}, {selector: 'curl', text: 'Curl'}];
+  - var panels = [{selector: 'javascript', text: 'Javascript'}, {selector: 'golang', text: 'Go'}, {selector: 'curl', text: 'Curl'}];
   .usage-code-panels
     +code-panels(panels)
       +code-panel('javascript')
@@ -16,7 +16,7 @@ mixin usage-code-panels
           +code('xml')
             != '&ltscript src="/node_modules/abxtracted/dist/abxtracted.min.js"&gt&lt/script&gt'
         +code-panel-section('Usage')
-          p 1. Obtain the user scenario:
+          p 1. Obtain the customer scenario:
           +code('javascript').
             /*
             ** Abx.Experiment(projectId, experimentKey)
@@ -47,7 +47,7 @@ mixin usage-code-panels
             });
           p
             != '<strong>Note:</strong> If you opt to inform customer id, it must be any unique information that identifies the customer in your application.'
-          p 2. Inform when the user completes the experiment:
+          p 2. Inform when the customer completes the experiment:
           +code('javascript').
             /*
             ** experiment.complete(params)
@@ -70,14 +70,35 @@ mixin usage-code-panels
           p
             != '<strong>IMPORTANT:</strong> CustomerId is required if you have identified the customer by yourself on getting scenario.'
           p 3. That's all.
+      +code-panel('golang')
+        +code-panel-section('Installation')
+        p 1. Get the lib:
+        +code('go')
+          != 'go get github.com/abxtracted/go-abxtracted'
+        +code-panel-section('Usage')
+        p 1. Obtain the customer scenario:
+        +code('go').
+          var abx = abxtracted.New()
+          exp, err := abx.Get("project-id", "customer-id", "experiment-key")
+          if err != nil {
+            // deal with it
+          }
+        p 2. Inform when the customer completes the experiment:
+        +code('go').
+          if err := abx.Complete("project-id", exp); err != nil {
+            // deal with it
+          }
+        p 3. That's all.
+        p
+          != '<strong>Note:</strong> The "customer-id" may be an e-mail, an unique id or any unique information that identifies the customer in your application.'
       +code-panel('curl')
         +code-panel-section('Usage')
-        p 1. Obtain the user scenario:
+        p 1. Obtain the customer scenario:
         +code('bash').
           curl -XGET 'https://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}'
-        p 2. Inform when the user completes the experiment:
+        p 2. Inform when the customer completes the experiment:
         +code('bash').
           curl -XGET 'https://api.abxtracted.com/public/project/{projectId}/customer/{customerId}/experiment/{experimentKey}/check/complete'
         p 3. That's all.
         p
-          != '<strong>Note:</strong> The customerId may be an e-mail, an unique id or any unique information that identifies the user in your application.'
+          != '<strong>Note:</strong> The customerId may be an e-mail, an unique id or any unique information that identifies the customer in your application.'
