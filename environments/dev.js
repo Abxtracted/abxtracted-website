@@ -9,7 +9,14 @@
     },
     googleAnalyticsId: 'UA-99548032-2',
     mixPanelToken: '514c961d03f02bde2dc52aa223f3902d',
-    abxtractedProjectId: '1651e269-cd0e-4a9f-adef-e7930f23ed41'
+    abxtractedProjectId: '1651e269-cd0e-4a9f-adef-e7930f23ed41',
+    mailchimp: {
+      user: 'abxtracted',
+      api: {
+        key: 'c3a999dd86e8084c09c42b466e87df4b-us16',
+        baseUrl: 'https://us16.api.mailchimp.com/3.0/'
+      }
+    }
   };
 
 }());
