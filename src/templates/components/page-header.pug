@@ -1,4 +1,4 @@
-include buttons.pug
+include subscription-form.pug
 
 mixin page-header-minimal(title, cssClass)
   section.page-header(class=cssClass)
@@ -7,11 +7,10 @@ mixin page-header-minimal(title, cssClass)
 mixin page-header-minimal-small(title)
   +page-header-minimal(title, 'page-header-small')
 
-mixin page-header(title, secondaryButtonText, primaryButtonText, cssClass)
+mixin page-header(title, cssClass)
   section.page-header(data-js="page-header" class=cssClass)
     h1= title
-    +button-primary('button', 'page-header-primary-button')= primaryButtonText || 'Start for free'
-    +button-secondary('button', 'page-header-secondary-button')= secondaryButtonText
+    +subscription-form()
 
-mixin page-header-small(title, secondaryButtonText, primaryButtonText)
-  +page-header(title, secondaryButtonText, primaryButtonText, 'page-header-small')
+mixin page-header-small(title)
+  +page-header(title, 'page-header-small')

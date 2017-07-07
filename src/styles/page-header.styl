@@ -1,26 +1,30 @@
 @require '_variables'
 @require '_mixins'
 
+$page-header-placeholder-color = alpha($color-white, .5)
+
 .page-header
   padding 220px 0
   color $color-white
   text-align center
   bg-gradient-vertical($color-purple, $color-blue-semi-dark)
   &.page-header-small
-    padding 165px 0 110px
+    padding 140px 0 100px
   h1
     margin 0 auto
     max-width 690px
-  .button
-    margin 30px 25px 0
-    min-width 200px
-    opacity 0
-    transition(all, 300ms)
+  .subscription-form
+    margin-top 30px
+    background-color transparent
+    input
+      background-color transparent
+      color $color-white
+      text-align center
+      border 1px solid $color-white
+    placeholder($page-header-placeholder-color)
 
 +breakpoint('xs')
   .page-header
     padding 140px 0 100px
-    &.page-header-small
-      padding 140px 0 100px
     h1
       padding 0 25px
