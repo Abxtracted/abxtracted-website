@@ -1,0 +1,6 @@
+include buttons.pug
+
+mixin subscription-form()
+  form(data-js="subscription-form" class="subscription-form")
+    input(type="email" placeholder="Enter your email address" required)
+    +button-primary('submit')= 'Start now for free'

@@ -1,0 +1,17 @@
+@require '_mixins'
+
+.subscription-form
+  input,
+  button
+    margin 0 auto
+    max-width 500px
+  input
+    width 80%
+  button
+    display block
+    margin-top 10px
+
++breakpoint('xs')
+  .subscription-form
+    button
+      width 80%

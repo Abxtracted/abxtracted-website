@@ -25,9 +25,8 @@ define('constants/trackConstants', {
     clickedContact: 'clicked menu primary contact',
     clickedLogin: 'clicked menu primary login'
   },
-  pageHeader: {
-    clickedPrimaryBtn: 'clicked page header primary btn',
-    clickedSecondaryBtn: 'clicked page header secondary btn'
+  subscriptionForm: {
+    submitted: 'submitted subscription form'
   },
   ctaBar: {
     clickedPrimaryBtn: 'clicked cta bar primary btn'

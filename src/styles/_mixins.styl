@@ -31,6 +31,20 @@ clearfix()
     display table
     clear both
 
+placeholder($color)
+  ::-webkit-input-placeholder {
+    color $color
+  }
+  ::-moz-placeholder {
+    color $color
+  }
+  :-ms-input-placeholder {
+    color $color
+  }
+  :-moz-placeholder {
+    color $color
+  }
+
 transform($property)
   -webkit-transform unquote($property)
   -moz-transform unquote($property)

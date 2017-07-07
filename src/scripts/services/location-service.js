@@ -20,12 +20,28 @@ define('services/locationService', [
         return providers.$location.pathname;
     };
 
-    _public.goToApp = function(){
-      _public.url(environment.appBaseUrl);
+    _public.goToApp = function(searchParams){
+      var url = environment.appBaseUrl + '/#!/login';
+      if(searchParams)
+        url += stringifySearchParams(searchParams);
+      _public.url(url, {
+        openInNewTab: true
+      });
     };
 
     _public.goToWebisteHome = function(){
       _public.path('/');
+    }
+
+    function stringifySearchParams(params){
+      var stringifiedSearchParams = [];
+      for(var key in params)
+        stringifiedSearchParams.push(encodeSearchParam(key, params[key]));
+      return '?' + stringifiedSearchParams.join('&');
+    }
+
+    function encodeSearchParam(key, value){
+      return [key, encodeURIComponent(value)].join('=');
     }
 
     return _public;
