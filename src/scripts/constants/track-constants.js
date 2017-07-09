@@ -28,9 +28,6 @@ define('constants/trackConstants', {
   subscriptionForm: {
     submitted: 'submitted subscription form'
   },
-  ctaBar: {
-    clickedPrimaryBtn: 'clicked cta bar primary btn'
-  },
   workingExamplesList: {
     clickedVanillaJs: 'clicked working examples vanilla js',
     clickedJQuery: 'clicked working examples jquery'

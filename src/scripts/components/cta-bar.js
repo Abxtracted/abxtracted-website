@@ -1,27 +1,19 @@
 define('components/ctaBar', [
     'jquery',
-    'constants/trackConstants',
-    'services/trackService',
-    'services/locationService'
-  ], function($, trackConstants, trackService, locationService){
+    'components/subscriptionForm'
+  ], function($, subscriptionForm){
+
+    var CTA_BAR_SELECTOR = '[data-js=cta-bar]';
 
     var _public = {};
 
     _public.init = function(){
-      bindElements();
+      initSubscriptionForm();
     }
 
-    function bindElements(){
-      $('[data-js="cta-bar-button"]').on('click', onCtaBarButtonClick)
-    }
-
-    function onCtaBarButtonClick(){
-      trackCtaBarPrimaryBtnClicked();
-      locationService.goToApp();
-    }
-
-    function trackCtaBarPrimaryBtnClicked(){
-      trackService.track(trackConstants.ctaBar.clickedPrimaryBtn);
+    function initSubscriptionForm(){
+      var rootElement = $(CTA_BAR_SELECTOR);
+      subscriptionForm.init(rootElement);
     }
 
     return _public;

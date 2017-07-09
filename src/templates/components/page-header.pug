@@ -1,4 +1,4 @@
-include subscription-form.pug
+include simple-subscription-form.pug
 
 mixin page-header-minimal(title, cssClass)
   section.page-header(class=cssClass)
@@ -10,7 +10,7 @@ mixin page-header-minimal-small(title)
 mixin page-header(title, cssClass)
   section.page-header(data-js="page-header" class=cssClass)
     h1= title
-    +subscription-form()
+    +simple-subscription-form()
 
 mixin page-header-small(title)
   +page-header(title, 'page-header-small')

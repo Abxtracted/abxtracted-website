@@ -1,9 +1,8 @@
-include buttons.pug
+include simple-subscription-form.pug
 
 mixin cta-bar(title)
   .cta-bar-container
-    .cta-bar
+    .cta-bar(data-js="cta-bar")
       .cta-bar-title-container
         h1.cta-bar-title= title
-      .cta-bar-button-container
-        +button-primary('button', 'cta-bar-button') Start now
+        +simple-subscription-form()
