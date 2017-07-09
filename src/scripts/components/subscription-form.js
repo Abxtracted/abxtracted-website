@@ -9,12 +9,12 @@ define('components/subscriptionForm', [
 
     var _public = {};
 
-    _public.init = function(){
-      bindElements();
+    _public.init = function(rootElement){
+      bindElements(rootElement);
     };
 
-    function bindElements(){
-      $(SUBSCRIPTION_FORM_SELECTOR).on('submit', onSubscriptionFormSubmit);
+    function bindElements(rootElement){
+      $(SUBSCRIPTION_FORM_SELECTOR, rootElement).on('submit', onSubscriptionFormSubmit);
     }
 
     function onSubscriptionFormSubmit(evt){
